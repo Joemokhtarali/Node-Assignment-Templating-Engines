@@ -9,7 +9,15 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <h1>Users List</h1>
-    
+    <% if(users.length > 0 ) { %>
+        <h1>Users List</h1>
+        <ul>
+            <% users.forEach((user) => { %> 
+                <li> <%= user.name %> </li>
+            <% }) %>
+    <% } else { %>
+        <h1> No Users </h1>
+    <% } %>
+    </ul>
 </body>
 </html>

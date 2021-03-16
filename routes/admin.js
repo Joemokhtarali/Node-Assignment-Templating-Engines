@@ -3,15 +3,17 @@ const router = express.Router()
 
 const users = [] 
 
-router.get('/add-user', (req, res, next) => {
-    res.render('add-user'), {
+router.get("/add-user", (req, res, next) => {
+    res.render('add-user', {
         pageTitle: 'Add User',
         path: '/add-user'
-    }
+    });
 })
 
 router.post('/add-user', (req, res, next) => {
-    users.push({title: req.body})
+    users.push({name: req.body.name})
+    console.log(users)
+    console.log(req.body)
     res.redirect("/");
 })
 
